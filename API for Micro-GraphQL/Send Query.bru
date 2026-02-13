@@ -1,19 +1,25 @@
 meta {
   name: Send Query
-  type: http
-  seq: 1
+  type: graphql
+  seq: 2
 }
 
 post {
   url: {{URL}}/sendQuery
-  body: json
+  body: graphql
   auth: inherit
 }
 
-body:json {
+body:graphql {
   {
-    "hello": "world"
+    team {
+      player {
+        playerName
+      }
+      location
+    }
   }
+  
 }
 
 settings {
